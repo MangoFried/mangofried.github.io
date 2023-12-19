@@ -83,6 +83,7 @@ button:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1;  /* fixed 포지션된 헤더가 스크롤되면서 가려지지 않게 하기 위함 */
 }
 
 .header__logo {
@@ -276,4 +277,54 @@ button:focus {
 .bar__value {
     background-color: var(--color-accent);
     height: 3px;
+}
+
+/* Work */
+
+#work {
+    background-color: var(--color-primary);
+    color: var(--color--text);
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    margin: 2.5rem;
+    gap: 1rem;
+}
+
+.category {
+    position: relative; /* category__count 포지션 absolute를 사용하기 위해 그 위 부모 */
+    color: var(--color--text);
+    font-size: 1.1rem;
+    padding: 0.5rem 3rem;
+    border-radius: 4px;
+    border: 1px solid var(--color-accent);
+    cursor: pointer; /* 커서를 손가락 모양으로 */
+    white-space: nowrap;  /* 자동 줄 바꿈 안함 */
+}
+
+.category--selected {
+    color: var(--color-primary);
+    background-color: var(--color-accent);
+}
+
+.category__count {
+    opacity: 0; /* 화면에 보여지지 않음 */
+    position: absolute;      /* 근접한 부모중 스테틱이 아닌 부모는 바디 */
+    top: -20px;
+    right: 16px;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    border-radius: 100%;
+    background-color: var(--color-acccent-variant);
+    color: var(--color--text);
+    transition: all 250ms ease-in;
+}
+
+.category--selected .category__count,    /* selected태그 안에있는 count 이거나 */
+.category:hover .category__count {        /* 카테고리버튼에 마우스가 올라갔을때 그 안에 있는 count를*/
+    opacity: 1;       /* 화면에 보이게 한다 */
+    top: 0;
 }
