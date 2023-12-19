@@ -13,6 +13,7 @@
 --color-blue: #03e8f9;
 --color-orange: #fd6413;
 --color-gray: #1b1e26;
+
 }
 
 * {
@@ -93,4 +94,51 @@ button:focus {
 .header__menu__item.active {
     border: 1px solid var(--color-accent);
     border-radius: 4px;
+}
+
+/* Home */
+
+#home {
+    background: var(--color-primary);
+    color: var(--color--text);
+    padding: 5rem 1rem;
+    padding-top: 7rem;  
+    text-align: center;
+}
+
+.home__avatar {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;  /* 이미지 원래 비율을 유지할 수 있는 코드 */
+    border-radius: 100%;
+    border: 3px solid var(--color-accent);
+}
+
+.home__title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.home__title--strong {
+    color: var(--color-accent);
+}
+
+.home__description {
+    font-size: 1.3rem;
+}
+
+.home__contact {
+    display: inline-block;
+    background-color: var(--color-accent);  
+    margin: 2rem;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    color: var(--color-black);
+    border-radius: 4px;
+}
+.home__contact:hover {
+    background-color: transparent;
+    color: var(--color--text);
+    /* border: 2px solid var(--color-accent); // 컨텐츠 안에 영향을 줘 사이즈가 변경됌 */
+    outline: 2px solid var(--color-accent); 
 }
