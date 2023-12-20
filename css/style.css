@@ -75,7 +75,7 @@ button:focus {
 
 /* Header */
 .header {
-    background-color: #1b1e26;
+    background-color: transparent; /* 투명하게*/
     position: fixed;
     top: 0px;
     width: 100%;
@@ -84,6 +84,12 @@ button:focus {
     justify-content: space-between;
     align-items: center;
     z-index: 1;  /* (header태그가 가장 높은곳으로) fixed 포지션된 헤더가 스크롤되면서 가려지지 않게 하기 위함 */
+    transition: all 300ms ease;
+}
+
+.header--dark {
+    background-color: var(--color-primary);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .header__logo {
@@ -126,6 +132,7 @@ button:focus {
     padding-top: 7rem;  
     text-align: center;
 }
+
 
 .home__avatar {
     width: 250px;
