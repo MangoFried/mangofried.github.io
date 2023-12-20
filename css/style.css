@@ -83,7 +83,7 @@ button:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 1;  /* fixed 포지션된 헤더가 스크롤되면서 가려지지 않게 하기 위함 */
+    z-index: 1;  /* (header태그가 가장 높은곳으로) fixed 포지션된 헤더가 스크롤되면서 가려지지 않게 하기 위함 */
 }
 
 .header__logo {
@@ -327,4 +327,54 @@ button:focus {
 .category:hover .category__count {        /* 카테고리버튼에 마우스가 올라갔을때 그 안에 있는 count를*/
     opacity: 1;       /* 화면에 보이게 한다 */
     top: 0;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.project {
+    position: relative;
+    border-radius: 8px;     /* 이미지 아래 텍스트가 있으면 radius가 적용 안됌*/
+    overflow: hidden;
+}
+
+.project__img {
+    width: 100%;      /* 부모의 너비 기준 */
+}
+
+.project__metadata {
+    position: absolute;    /* 기존 문서에서 빠져나오는 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-black);
+    opacity: 0;  /* 배경 어두움 조절 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 250ms ease-in;
+    transform: translateY(-10px);
+}
+
+.project__metadata:hover {
+    opacity: 0.8;
+    transform: translateY(0px);
+}
+
+.project__title:after {    /* html에 의미 없는 div태그를 추가해서 스타일을 넣는 방식 대신*/
+    content: '';  /* 내용은 빈공간이고 */
+    display: block;  /* 블럭요소인 */
+    position: relative;  /* 위치는 상대적으로*/
+    left: 50%; /* title 다음 위치 블럭에서 50% 왼쪽*/
+    transform: translateX(-50%);  /* 수평축으로 50% 왼쪽이동*/
+    margin: 0.5rem 0;
+    width: 80px;
+    height: 2px;
+    background-color: var(--color-accent);
 }
