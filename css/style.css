@@ -378,3 +378,47 @@ button:focus {
     height: 2px;
     background-color: var(--color-accent);
 }
+
+ /* Testimonial */
+.testimonials {
+    margin: 3rem;
+}
+
+.testimonial {
+    display: flex;
+    gap: 2rem;
+    align-items: center;   /* Y축에서 오뎅꼬치*/
+    margin-bottom: 2rem;
+}
+.testimonial:nth-child(even) .testimonial__img {   /*해당태그 "nth-child"선택자 사용후 even(짝수 요소)*/
+    order: 1; /* 0부터 시작, 1로 지정하면 순서가 뒤로 밀려남*/
+}
+.testimonial__img {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 0px 1px rgb(0 0 0 / 0.06),
+    0px 1px 1px -0.5px rgb(0 0 0 / 0.06),
+    0px 3px 3px -1.5px rgb(0 0 0 / 0.06), 
+    0px 6px 6px -3px rgb(0 0 0 / 0.06),
+    0px 12px 12px -6px rgb(0 0 0 / 0.06),
+    0px 24px 24px -12px rgb(0 0 0 / 0.06);
+}
+
+.testimonial__bubble {
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 0px 0px 1px rgb(0 0 0 / 0.06),
+    0px 1px 1px -0.5px rgb(0 0 0 / 0.06),
+    0px 3px 3px -1.5px rgb(0 0 0 / 0.06), 
+    0px 6px 6px -3px rgb(0 0 0 / 0.06),
+    0px 12px 12px -6px rgb(0 0 0 / 0.06),
+    0px 24px 24px -12px rgb(0 0 0 / 0.06);
+
+}
+
+.testimonial__bubble__name {
+    color: var(--color-accent);
+    font-weight: bold;
+    filter: brightness(70%);
+}
