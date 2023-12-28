@@ -52,7 +52,7 @@ button {
 }
 
 button:focus {
-    outline: 1px solid var(--color-accent);
+    outline: 1px solid transparent;
 }
 /* Common */
 .section {
@@ -88,7 +88,7 @@ button:focus {
 }
 
 .header--dark {
-    background-color: var(--color-primary);
+    background-color: var(--color-orange);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -105,13 +105,20 @@ button:focus {
 .header__logo__title {
     font-size: 1.8rem;
 }
+
+.header__toggle {
+    display: none;
+}
+
 .header__menu {
     display: flex;
     gap: 4px;
 }
 
 .header__menu__item {
+    display: block;
     padding: 8px 16px;
+    border-bottom: 1px solid var(transparent); /*display 블럭으로 변경하면서 아래로 밀리는 현상 해결*/
 }
 
 .header__menu__item:hover {
@@ -430,7 +437,9 @@ button:focus {
     filter: brightness(70%);
 }
 /* Arrow up */
+
 .arrow-up {
+    transition: all 250ms ease-in;
     background-color: var(--color-primary);
     position: fixed;
     bottom: 3rem;
@@ -442,6 +451,7 @@ button:focus {
     text-align: center;     /* a태그 x축 꼬치이동*/
     box-shadow: 5px 5px 0px 0px var(--color-accent);
 }
+
 
 /* Footer */
 
@@ -467,7 +477,7 @@ button:focus {
 
 @media screen and (max-width: 768px) {
     .section {
-        padding: 3rem 2rem;
+        padding: 4rem 2rem;
     }
 
     .title {
@@ -480,15 +490,28 @@ button:focus {
     .header {
         flex-direction: column;
         align-items: start;
+        background-color: var(--color-primary);   /* 미디어쿼리시 배경색 추가*/
     }
-
+    .header__toggle {
+        display: block;
+        color: var(--color-white);
+        font-size: 1.5rem;
+        position: absolute; /* 기존 플렉스 clumn 방향에서 벗어나서*/
+        top: 1.3rem;
+        right: 1rem;  /* 오른쪽 기준에서 1rem 간격*/
+        
+    }
     .header__menu {
+        display: none; /* 미디어 쿼리 안에선 우선 보이지 않게 함*/
         flex-direction: column;
         text-align: center;
         padding: 1rem 4rem;
         gap: 1rem;
     }
 
+    .header__menu.open {
+        display: flex;  /*js의 toggle 함수를 사용해 open클래스가 있는 경우 */
+    }
     .header__nav { /* 미디어쿼리에서만 사용하는 클래스 따로 추가*/
         width: 100%;
     }
