@@ -1,3 +1,5 @@
+'use strict';  //strict모드 예전 버전을 코드 사용한다면 에러메세지 출력
+
 // Header에 페이지 아래로 스크롤시 다크 스타일링 적용
 const header = document.querySelector('.header');
 const headerHeight = header.offsetHeight;
