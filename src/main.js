@@ -44,3 +44,19 @@ navberToggle.addEventListener('click', () => {
 navbarMenu.addEventListener('click', () => {
     navbarMenu.classList.remove('open');
 });
+
+// 1분코딩 메뉴 클릭이벤트 엑티브 활성화
+// const currentMenu;
+// const menuLinks = document.querySelector('.header__menu__item');
+
+// function scrollMenuHandler() {
+//     if(currentMenu) {
+//         currentMenu.classList.remove('header__menu__item.active');
+//     }
+//     this.classList.add('header__menu__item.active');
+//     currentMenu = this;
+// }
+
+// for(let i = 0; i < menuLinks.length; i++) {
+//     menuLinks[i].addEventListener('click', scrollMenuHandler)
+// }
